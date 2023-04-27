@@ -1,14 +1,19 @@
 
 Config = {}
-Config.ScriptName = GetCurrentResourceName() 
+Config.ScriptName = GetCurrentResourceName()
+    -- TODO
+    -- CAMERA FACE NPC
+    -- NPC ANIMATION
 
--- TODO
--- CAMERA FACE NPC
--- NPC ANIMATION
-
---menu position
--- "center" / "top-left" / "top-right"
+    --menu position
+    -- "center" / "top-left" / "top-right"
 Config.Align = "top-left"
+
+Config.defaultlang = "en_lang"
+
+       -- open stores
+Config.Key = 0x760A9C6F --[G]
+
 
 --Webhook Section, description is in translation
 Config.UseWebhook = false -- Use webhook
@@ -24,11 +29,6 @@ Config.WebhookLogo = ""
 Config.WebhookLogo2 = ""
 Config.WebhookAvatar = ""
 
-Config.defaultlang = "en_lang"
-
--- open stores
-Config.Key = 0x760A9C6F --[G]
-
 
     --- STORES ---
 
@@ -36,54 +36,29 @@ Config.Stores = {
 -----------------------------------------------------------------------------
 --------------------------------------Valentine------------------------------
 -----------------------------------------------------------------------------
-    ValBlacksmith = {
+ 
+    ValHerbologist = {
         blipAllowed = true,
-        BlipName = "Blacksmith Shop",
-        storeName = "Valentine Blacksmith Shop",
-        PromptName = "Blacksmith Shop",
-        sprite = -758970771,
-        x = -360.44, y = 794.71, z = 116.24, h = 336.49,
+        BlipName = "Flower & Herbs Seed Market",
+        storeName = "Valentine Flower & Herbs Seed Market",
+        sprite = 669307703,
+        x = -281.68, y = 925.05, z = 128.34, h = 348.78,
         distanceOpenStore = 3.0,
         NpcAllowed = true,
-        NpcModel = "S_M_M_LiveryWorker_01",
-        AllowedJobs = {}, -- jobs allowed
+        NpcModel = "MP_CAMPDEF_littlecreek_females_01",
+        AllowedJobs = {"herbologist","florist"}, -- jobs allowed
         JobGrade = 0,
-        category = { "Tools" }, -- you need to add the same words to the buyitems and buyitems category you can add new categories as long the items have the category names
+        category = { "Herbs","Flowers" }, -- you need to add the same words to the buyitems and buyitems category you can add new categories as long the items have the category names
         storeType = {  "Buy","Sell" }, -- choose the storetype if you translate this you must do the same in the client.lua file
         StoreHoursAllowed = false, -- if you want the stores to use opening and closed hours
         RandomPrices = false,
         StoreOpen = 7, -- am
         StoreClose = 21 -- pm
-
     }, 
+
 }
 
------------------------------------------------------------------------------
--------------------------------------ITEMS-----------------------------------
------------------------------------------------------------------------------
 
-    -- ItemLable = translate here
-    -- itemName = same as in your databse
-    -- curencytype = "cash" or "gold" only use one.
-    -- price = numbers only
-    -- desc = a description of the item
-    -- category = where the item will be displayed at 
-
-BlackSmith_ShopItems_SELL = {         
-       -- Tools
-    { itemLabel = "Pickaxe", itemName = "pickaxe", currencyType = "cash", sellprice = 5, randomprice = math.random(30, 55), desc = "Sell a Pickaxe", category = "Tools" },
-    { itemLabel = "Hatchet", itemName = "hatchet", currencyType = "cash", sellprice = 5, randomprice = math.random(30, 55), desc = "Sell a Garden Hoe", category = "Tools" }       
-} 
-
------------------------------------------------------------------------------
---------------------------------------SELL ITEMS ----------------------------
------------------------------------------------------------------------------
-Config.SellItems = {       
-    -----------------------------------------------------------------------------
-    --------------------------------------Valentine------------------------------
-    -----------------------------------------------------------------------------        
-        ValBlacksmith = BlackSmith_ShopItems_SELL,  
-}
 -----------------------------------------------------------------------------
 -------------------------------------ITEMS-----------------------------------
 -----------------------------------------------------------------------------
@@ -94,36 +69,121 @@ Config.SellItems = {
     -- price = numbers only
     -- desc = a description of the item
     -- category = where the item will be displayed at
-    BlackSmith_ShopItems_BUY = {
-            -- Tools
-           { itemLabel = "Pickaxe", itemName = "pickaxe", currencyType = "cash", buyprice = 20, randomprice = math.random(30, 55), desc = "Buy a Pickaxe", category = "Tools" },
-            { itemLabel = "Hatchet", itemName = "hatchet", currencyType = "cash", buyprice = 20, randomprice = math.random(30, 55), desc = "Buy a Garden Hoe", category = "Tools" }            
-     }
+  Herbologist_SELL_ITEMS = {            
+    -- Herbs
+    { itemLabel = "Coca Seed", itemName = "Coca_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Coca Seed", category = "Herbs" },
+    { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell English Mace Seed", category = "Herbs" }, 
+    { itemLabel = "Wild Feverfew Seeds", itemName = "Wild_Feverfew_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Wild Feverfew Seeds", category = "Herbs" },
+    
+    -- Flowers 
+    { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Agarita Seed", category = "Flowers" },  
+    { itemLabel = "Blood Flower Seed", itemName = "Blood_Flower_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Blood Flower Seed", category = "Flowers" },     
+    { itemLabel = "Choc Daisy Seed", itemName = "Choc_Daisy_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Choc Daisy Seed", category = "Flowers" },
+    { itemLabel = "Prairie Poppy Seed", itemName = "Prairie_Poppy_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Prairie Poppy Seed", category = "Flowers" },   
+}
+ 
+
+
+-----------------------------------------------------------------------------
+--------------------------------------SELL ITEMS ----------------------------
+-----------------------------------------------------------------------------
+Config.SellItems = {
+      
+    -----------------------------------------------------------------------------
+    --------------------------------------Armadillo------------------------------
+    -----------------------------------------------------------------------------
+ 
+    -----------------------------------------------------------------------------
+    --------------------------------------Blackwater------------------------------
+    ----------------------------------------------------------------------------- 
+        BlackwaterHerbologist = Herbologist_SELL_ITEMS, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Rhodes---------------------------------
+    ----------------------------------------------------------------------------- 
+        RhodesHerbologist = Herbologist_SELL_ITEMS,
+    -----------------------------------------------------------------------------
+    --------------------------------------St-Denis-------------------------------
+    ----------------------------------------------------------------------------- 
+        StDenisHerbologist = Herbologist_SELL_ITEMS,
+    -----------------------------------------------------------------------------
+    --------------------------------------Strawberry-----------------------------
+    ----------------------------------------------------------------------------- 
+        StrawbHerbologist = Herbologist_SELL_ITEMS,
+    -----------------------------------------------------------------------------
+    --------------------------------------Tumbleweed-----------------------------
+    -----------------------------------------------------------------------------
+         TumbleHerbologist = Herbologist_SELL_ITEMS, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Valentine------------------------------
+    ----------------------------------------------------------------------------- 
+        ValHerbologist = Herbologist_SELL_ITEMS,
+    -----------------------------------------------------------------------------
+    --------------------------------------Vanhorn--------------------------------
+    -----------------------------------------------------------------------------
+        VanHerbologist = Herbologist_SELL_ITEMS, 
+    -----------------------------------------------------------------------------         
+}
+
+-----------------------------------------------------------------------------
+-------------------------------------ITEMS-----------------------------------
+-----------------------------------------------------------------------------
+
+    -- ItemLable = translate here
+    -- itemName = same as in your databse
+    -- curencytype = "cash" or "gold" only use one.
+    -- price = numbers only
+    -- desc = a description of the item
+    -- category = where the item will be displayed at
+ 
+
+    Herbologist_BUY_ITEMS = {     
+    -- Herbs
+        { itemLabel = "Coca Seed", itemName = "Coca_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Coca Seed", category = "Herbs" },
+        { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy English Mace Seed", category = "Herbs" }, 
+        { itemLabel = "Wild Feverfew Seeds", itemName = "Wild_Feverfew_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Wild Feverfew Seeds", category = "Herbs" },    
+
+    -- Flowers 
+        { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Agarita Seed", category = "Flowers" },  
+        { itemLabel = "Blood Flower Seed", itemName = "Blood_Flower_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Blood Flower Seed", category = "Flowers" }, 
+        { itemLabel = "Choc Daisy Seed", itemName = "Choc_Daisy_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Choc Daisy Seed", category = "Flowers" },
+        { itemLabel = "Prairie Poppy Seed", itemName = "Prairie_Poppy_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Prairie Poppy Seed", category = "Flowers" },
+    }
 -----------------------------------------------------------------------------
 --------------------------------------BUY ITEMS ----------------------------
 -----------------------------------------------------------------------------
-Config.BuyItems = {     
+Config.BuyItems = {    
+    -----------------------------------------------------------------------------
+    --------------------------------------Armadillo- ----------------------------
+    -----------------------------------------------------------------------------
+ 
+    -----------------------------------------------------------------------------
+    --------------------------------------Blackwater------------------------------
+    ----------------------------------------------------------------------------- 
+        BlackwaterHerbologist = Herbologist_BUY_ITEMS, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Rhodes---------------------------------
+    ----------------------------------------------------------------------------- 
+        RhodesHerbologist = Herbologist_BUY_ITEMS, 
+    -----------------------------------------------------------------------------
+    --------------------------------------St-Denis-------------------------------
+    -----------------------------------------------------------------------------  
+        StDenisHerbologist = Herbologist_BUY_ITEMS, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Strawberry-----------------------------
+    ----------------------------------------------------------------------------- 
+        StrawbHerbologist  = Herbologist_BUY_ITEMS, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Tumbleweed-----------------------------
+    ----------------------------------------------------------------------------- 
+        TumbleHerbologist  = Herbologist_BUY_ITEMS, 
     -----------------------------------------------------------------------------
     --------------------------------------Valentine------------------------------
-    -----------------------------------------------------------------------------       
-        ValBlacksmith = BlackSmith_ShopItems_BUY, 
+    ----------------------------------------------------------------------------- 
+        ValHerbologist  = Herbologist_BUY_ITEMS, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Vanhorn--------------------------------
+    ----------------------------------------------------------------------------- 
+        VanHerbologist  = Herbologist_BUY_ITEMS,  
+    -----------------------------------------------------------------------------
+    
 }
-
---- Want the pre configured data for the stores? 
---- Little Creek -- Admin an dConcept Owner of Little Creek, Tillie 
-------- has put together an amazing set of stores and items.
-
---- Purchase her configuration files for vorp_stores at our website.
---- https://craftedbylittledragons.net/vorp-store-configuration-files-by-tillie-little-creek/
-
---- The config file for this specific store.
---- https://craftedbylittledragons.net/product/vorp_store_blacksmith-config-lua/
-
---- The related crafting files.
---- https://craftedbylittledragons.net/product/vorp_crafting_blacksmith-config-lua/
-
---- All crafting files. 
---- https://craftedbylittledragons.net/vorp-crafting-configuration-files-by-tillie-little-creek/
-
---- Bundles are available here:
---- https://craftedbylittledragons.net/vorp-configuration-files-bundles-by-tillie-little-creek/
