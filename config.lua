@@ -14,25 +14,33 @@ Config.defaultlang = "en_lang"
        -- open stores
 Config.Key = 0x760A9C6F --[G]
 
-
---Webhook Section, description is in translation
-Config.UseWebhook = false -- Use webhook
-
---Mandatory Webhook Parts
-Config.WebhookTitle = ""
-Config.Webhook = ""
-
---Optional Webhook Parts, if not filled will default vorp_core config
-Config.WebhookColor = ""
-Config.WebhookName = ""
-Config.WebhookLogo = ""
-Config.WebhookLogo2 = ""
-Config.WebhookAvatar = ""
-
-
     --- STORES ---
 
-Config.Stores = { 
+Config.Stores = {
+-----------------------------------------------------------------------------
+--------------------------------------Armadillo------------------------------
+-----------------------------------------------------------------------------
+ 
+-----------------------------------------------------------------------------
+--------------------------------------Blackwater-----------------------------
+-----------------------------------------------------------------------------
+  
+-----------------------------------------------------------------------------
+--------------------------------------Rhodes---------------------------------
+-----------------------------------------------------------------------------
+ 
+-----------------------------------------------------------------------------
+--------------------------------------St-Denis-------------------------------
+-----------------------------------------------------------------------------
+ 
+-----------------------------------------------------------------------------
+--------------------------------------Strawberry-----------------------------
+-----------------------------------------------------------------------------
+ 
+-----------------------------------------------------------------------------
+--------------------------------------Tumbleweed-----------------------------
+-----------------------------------------------------------------------------
+ 
 -----------------------------------------------------------------------------
 --------------------------------------Valentine------------------------------
 -----------------------------------------------------------------------------
@@ -54,7 +62,11 @@ Config.Stores = {
         RandomPrices = false,
         StoreOpen = 7, -- am
         StoreClose = 21 -- pm
-    }, 
+    },
+-----------------------------------------------------------------------------
+--------------------------------------Vanhorn--------------------------------
+-----------------------------------------------------------------------------
+ 
 
 }
 
@@ -71,15 +83,10 @@ Config.Stores = {
     -- category = where the item will be displayed at
   Herbologist_SELL_ITEMS = {            
     -- Herbs
-    { itemLabel = "Coca Seed", itemName = "Coca_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Coca Seed", category = "Herbs" },
     { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell English Mace Seed", category = "Herbs" }, 
-    { itemLabel = "Wild Feverfew Seeds", itemName = "Wild_Feverfew_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Wild Feverfew Seeds", category = "Herbs" },
-    
+     
     -- Flowers 
     { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Agarita Seed", category = "Flowers" },  
-    { itemLabel = "Blood Flower Seed", itemName = "Blood_Flower_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Blood Flower Seed", category = "Flowers" },     
-    { itemLabel = "Choc Daisy Seed", itemName = "Choc_Daisy_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Choc Daisy Seed", category = "Flowers" },
-    { itemLabel = "Prairie Poppy Seed", itemName = "Prairie_Poppy_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Prairie Poppy Seed", category = "Flowers" },   
 }
  
 
@@ -137,16 +144,11 @@ Config.SellItems = {
  
 
     Herbologist_BUY_ITEMS = {     
-    -- Herbs
-        { itemLabel = "Coca Seed", itemName = "Coca_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Coca Seed", category = "Herbs" },
+    -- Herbs        
         { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy English Mace Seed", category = "Herbs" }, 
-        { itemLabel = "Wild Feverfew Seeds", itemName = "Wild_Feverfew_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Wild Feverfew Seeds", category = "Herbs" },    
-
+  
     -- Flowers 
-        { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Agarita Seed", category = "Flowers" },  
-        { itemLabel = "Blood Flower Seed", itemName = "Blood_Flower_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Blood Flower Seed", category = "Flowers" }, 
-        { itemLabel = "Choc Daisy Seed", itemName = "Choc_Daisy_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Choc Daisy Seed", category = "Flowers" },
-        { itemLabel = "Prairie Poppy Seed", itemName = "Prairie_Poppy_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Prairie Poppy Seed", category = "Flowers" },
+        { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Agarita Seed", category = "Flowers" },        
     }
 -----------------------------------------------------------------------------
 --------------------------------------BUY ITEMS ----------------------------
