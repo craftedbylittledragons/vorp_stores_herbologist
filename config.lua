@@ -83,10 +83,10 @@ Config.Stores = {
     -- category = where the item will be displayed at
   Herbologist_SELL_ITEMS = {            
     -- Herbs
-    { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell English Mace Seed", category = "Herbs" }, 
+    { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Sell English Mace Seed", category = "Herbs" }, 
      
     -- Flowers 
-    { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell Agarita Seed", category = "Flowers" },  
+    { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Sell Agarita Seed", category = "Flowers" },  
 }
  
 
@@ -145,10 +145,10 @@ Config.SellItems = {
 
     Herbologist_BUY_ITEMS = {     
     -- Herbs        
-        { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy English Mace Seed", category = "Herbs" }, 
+        { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Buy English Mace Seed", category = "Herbs" }, 
   
     -- Flowers 
-        { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy Agarita Seed", category = "Flowers" },        
+        { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Buy Agarita Seed", category = "Flowers" },        
     }
 -----------------------------------------------------------------------------
 --------------------------------------BUY ITEMS ----------------------------
