@@ -54,7 +54,8 @@ Config.Stores = {
         distanceOpenStore = 3.0,
         NpcAllowed = true,
         NpcModel = "MP_CAMPDEF_littlecreek_females_01",
-        AllowedJobs = {"herbologist","florist"}, -- jobs allowed
+        AllowedJobs = {}, -- jobs allowed
+        --AllowedJobs = {"herbologist","florist"}, -- jobs allowed
         JobGrade = 0,
         category = { "Herbs","Flowers" }, -- you need to add the same words to the buyitems and buyitems category you can add new categories as long the items have the category names
         storeType = {  "Buy","Sell" }, -- choose the storetype if you translate this you must do the same in the client.lua file
@@ -83,10 +84,10 @@ Config.Stores = {
     -- category = where the item will be displayed at
   Herbologist_SELL_ITEMS = {            
     -- Herbs
-    { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Sell English Mace Seed", category = "Herbs" }, 
+    { itemLabel = "English Mace Plant", itemName = "English_Mace_Plant", currencyType = "cash", item_price = 5.00, randomprice = math.random(30, 55), desc = "Sell English Mace Seed", category = "Herbs" }, 
      
     -- Flowers 
-    { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Sell Agarita Seed", category = "Flowers" },  
+    { itemLabel = "Agarita Plant", itemName = "Agarita_Plant", currencyType = "cash", item_price = 5.00, randomprice = math.random(30, 55), desc = "Sell Agarita Seed", category = "Flowers" },  
 }
  
 
@@ -145,10 +146,10 @@ Config.SellItems = {
 
     Herbologist_BUY_ITEMS = {     
     -- Herbs        
-        { itemLabel = "English Mace Seed", itemName = "English_Mace_Seed", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Buy English Mace Seed", category = "Herbs" }, 
+        { itemLabel = "English Mace Plant", itemName = "English_Mace_Plant", currencyType = "cash", item_price = 5.00, randomprice = math.random(30, 55), desc = "Buy English Mace Seed", category = "Herbs" }, 
   
     -- Flowers 
-        { itemLabel = "Agarita Seed", itemName = "Agarita_Seed", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Buy Agarita Seed", category = "Flowers" },        
+        { itemLabel = "Agarita Plant", itemName = "Agarita_Plant", currencyType = "cash", item_price = 5.00, randomprice = math.random(30, 55), desc = "Buy Agarita Seed", category = "Flowers" },        
     }
 -----------------------------------------------------------------------------
 --------------------------------------BUY ITEMS ----------------------------
